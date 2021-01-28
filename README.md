@@ -91,6 +91,7 @@ A summary of the access policies in place can be found in the table below:
 | Load Blancer  | Yes                 | 169.254.224.135            |   West US          |
 
 - Set up RedTeam NSG inbound and outbound security setting.
+
 ![](Images/RedTeam_NSG_security_rules.png)
 
 
