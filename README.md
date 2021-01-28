@@ -106,7 +106,7 @@ The playbook implements the following tasks:
 - Download application images using docker hub
 - Automate application and configuration using playbook *.yml file.  
 
-The following screenshot displays the result of running `docker ps`.
+The following screenshot displays the result of running `docker ps` :
 
 ![](Images/docker_ps.png)
 
