@@ -39,6 +39,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 In the first setup:
 - Set up 3 virtual machine for web servers: WM1, WM2 and WM3.
+
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
 | JBox     | Gateway  | 10.0.0.4   | Linux            |
