@@ -70,6 +70,7 @@ Since we are using a free version of Azure Lab Services, only 3 WMs could be set
 ![](Images/RedTeam_ELK-Server.png)
 
 
+
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
@@ -93,15 +94,16 @@ A summary of the access policies in place can be found in the table below:
 ![](Images/RedTeam_NSG_security_rules.png)
 
 
+
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- configuration with Ansible containerv allows: team shares consistent development environment, reduces development management overhead.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Install Docker
+- Download application images using docker hub
+- Automate application and configuration using playbook *.yml file.  
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
