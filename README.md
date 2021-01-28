@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/DVWA.png)
+![](Images/DVWA.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -38,23 +38,28 @@ The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 In the first setup:
+- Set up 3 virtual machine for web servers: WM1, WM2 and WM3.
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.4   | Linux            |
+| JBox | Gateway  | 10.0.0.4   | Linux            |
 | Web-1    | Web WM 1 | 10.0.0.5   | Linux            |
 | Web-2    | Web WM 2 | 10.0.0.6   | Linux            |
 | Web-3    | Web WM 3 | 10.0.0.7   | Linux            |
 
-Since we are using a free version, we could open have 3 VMs.
-We will need to delete the Web-3 and then set up ELK Server.
+Since we are using a free version of Azure Lab Services, only 3 WMs could be set up. 
+- Delete the Web-3 and then set up ELK Server.
 
 | Name     | Function   | IP Address | Operating System |
 |----------|------------|------------|------------------|
-| Jump Box | Gateway    | 10.0.0.4   | Linux            |
+| JBox | Gateway    | 10.0.0.4   | Linux            |
 | Web-1    | Web WM 1   | 10.0.0.5   | Linux            |
 | Web-2    | Web WM 2   | 10.0.0.6   | Linux            |
 | ELK      | ELK Server | 10.1.0.4   | Linux            |
 
+- Set up RedTeam resoucres as follows:
+![](Images/RedTeam_resources.png)
+
+![](Images/RedTeam_JBox.png)
 
 ### Access Policies
 
@@ -65,7 +70,7 @@ Only the Whitelisted machine can accept connections from the Internet. Access to
 Machines within the network can only be accessed by SSH port.
 My persaonl machine with IP 169.254.224.135 allow to access ELK VM.
 
-A summary of the access policies in place can be found in the table below.
+A summary of the access policies in place can be found in the table below:
 
 | Name          | Publicly Accessible |  Allowed IP Addresses      |   Location         |
 |---------------|---------------------|----------------------------|--------------------|
@@ -74,6 +79,9 @@ A summary of the access policies in place can be found in the table below.
 | Web-2         | No                  | SSH port 22                |   West US          |
 | ELK           | Yes                 | 169.254.224.135            |   East US          |
 | Load Blancer  | Yes                 | 169.254.224.135            |   West US          |
+
+- Set up RedTeam NSG inbound and outbound security setting.
+![](Images/RedTeam_NSG_security_rules.png)
 
 
 ### Elk Configuration
