@@ -49,17 +49,25 @@ In the first setup:
 Since we are using a free version of Azure Lab Services, only 3 WMs could be set up. 
 - Delete the Web-3 and then set up ELK Server.
 
-| Name     | Function   | IP Address | Operating System |
-|----------|------------|------------|------------------|
-| JBox | Gateway    | 10.0.0.4   | Linux            |
-| Web-1    | Web WM 1   | 10.0.0.5   | Linux            |
-| Web-2    | Web WM 2   | 10.0.0.6   | Linux            |
-| ELK      | ELK Server | 10.1.0.4   | Linux            |
+| Name          | Function   | IP Address | Operating System |
+|---------------|------------|------------|------------------|
+| JBox          | Gateway    | 10.0.0.4   |   Linux          |
+| Web-1         | Web WM 1   | 10.0.0.5   |   Linux          |
+| Web-2         | Web WM 2   | 10.0.0.6   |   Linux          |
+| ELK-Server-2  | ELK Server | 10.1.0.4   |   Linux          |
 
 - Set up RedTeam resoucres as follows:
+
 ![](Images/RedTeam_resources.png)
 
 ![](Images/RedTeam_JBox.png)
+
+![](Images/RedTeam_Web-1.png)
+
+![](Images/RedTeam_Web-2.png)
+
+![](Images/RedTeam_ELK-Server.png)
+
 
 ### Access Policies
 
