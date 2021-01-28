@@ -41,7 +41,7 @@ In the first setup:
 - Set up 3 virtual machine for web servers: WM1, WM2 and WM3.
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| JBox | Gateway  | 10.0.0.4   | Linux            |
+| JBox     | Gateway  | 10.0.0.4   | Linux            |
 | Web-1    | Web WM 1 | 10.0.0.5   | Linux            |
 | Web-2    | Web WM 2 | 10.0.0.6   | Linux            |
 | Web-3    | Web WM 3 | 10.0.0.7   | Linux            |
