@@ -131,10 +131,6 @@ These Beats allow us to collect the following information from each machine:
 
 - Filebeat collects data about the file system, and Metricbeat collects machine metrics with uptime status.
 
-- Packetbeat collects Network protocols like HTTP and keep a pulse on application latency and errors.
-
-- Winlogbeat collects Windows machine event logs.
-
 - Heartbeat collects and monitors services for their availability.
 
 
