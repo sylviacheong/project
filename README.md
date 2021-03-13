@@ -137,3 +137,5 @@ SSH into the control node and follow the steps below:
 - Run the playbook, and navigate to the target machine to check that the installation worked as expected.
 
 URL: http://ELK-Server_Public_IP:5601
+
+The step by step images are captured in the New_images folder.
