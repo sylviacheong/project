@@ -5,8 +5,6 @@ The files in this repository were used to configure the network depicted below.
 ![](New_images/New_DVWA.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml file may be used to install only certain pieces of it, such as Filebeat.
-
--[ELK Docker Install File](Files/filebeat-playbook.yml)
   
 -[Filebeat Configuration File](Files/filebeat-playbook.yml)
 
@@ -101,8 +99,9 @@ The playbook implements the following tasks:
 - Install Docker
 - Download application images using docker hub
 - Automate application and configuration using playbook *.yml file.  
+- [ELK Docker Install File](Files/install-elk.yml)
 
-The following screenshot displays the result of running `docker ps` :
+The following screenshot displays the result of running `docker ps -a` :
 
 ![](New_images/20-5-ansible-elk.PNG)
 
