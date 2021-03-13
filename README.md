@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![](New_Images/New_DVWA.png)
+![](New_images/New_DVWA.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -50,17 +50,17 @@ In the first setup:
 
 - Set up RedTeam resoucres as follows:
 
-![](New_Images/19-1-RedTeam-network-diagram.PNG)
+![](New_images/19-1-RedTeam-network-diagram.PNG)
 
-![](New_Images/19-RedTeam-vnet-diagram.PNG)
+![](New_images/19-RedTeam-vnet-diagram.PNG)
 
-![](New_Images/3-8-VM-Jbox-deployment-resource.PNG)
+![](New_images/3-8-VM-Jbox-deployment-resource.PNG)
 
-![](New_Images/5-6-VM-Web-1-resource.PNG)
+![](New_images/5-6-VM-Web-1-resource.PNG)
 
-![](New_Images/6-6-VM-Web-2-resource.PNG)
+![](New_images/6-6-VM-Web-2-resource.PNG)
 
-![](New_Images/17-8-ELK-server-VM-resource.PNG)
+![](New_images/17-8-ELK-server-VM-resource.PNG)
 
 
 
@@ -102,7 +102,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` :
 
-![](New_Images/20-5-ansible-elk.PNG)
+![](New_images/20-5-ansible-elk.PNG)
 
 
 
@@ -118,7 +118,7 @@ We have installed the following Beats on these machines:
 
 - Web-1:10.0.0.5 (Web server A)
 
-- Web-2:10.0.0.8 (Web server AB
+- Web-2:10.0.0.8 (Web server A)
 
 These Beats allow us to collect the following information from each machine:
 
