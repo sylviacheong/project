@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![](New_Images/New_DVWA.png)
+![](Images/DVWA.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -28,8 +28,7 @@ Load balancing ensures that the application will be highly avaliable, in additio
 - Load balancing also plays an important security role as computing moves evermore to the cloud. The off-loading function of a load balancer defends an organization against **distributed denial-of-service (DDoS)** attacks. 
 A **load balancer** can add additional layers of security to your website without any changes to your application. Protect applications from emerging threats 
 - **Jump box** prevents all Azure VM’s to expose to the public. It can be set-up easily using ARM; We can do monitoring and logging on a single box. We can easily turn the ON/OFF remote desktop connectivity feature. By using the network security group, we can restrict the IP addresses to communicate with the Jump box.
-- Jump box is used to administrate the RedTeam resources in the Virtual Network "RedTeamNetwork".
-- Firewall is created as "RedTeam_NSG" to block the external traffic.
+
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the files and system usage.
 - Filebeat collects data of the file system.
@@ -41,27 +40,34 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 In the first setup:
 - Set up 3 virtual machine for web servers: WM1, WM2 and WM3.
 
+| Name     | Function | IP Address | Operating System |
+|----------|----------|------------|------------------|
+| JBox     | Gateway  | 10.0.0.4   | Linux            |
+| Web-1    | Web WM 1 | 10.0.0.5   | Linux            |
+| Web-2    | Web WM 2 | 10.0.0.6   | Linux            |
+| Web-3    | Web WM 3 | 10.0.0.7   | Linux            |
+
+Since we are using a free version of Azure Lab Services, only 3 WMs could be set up. 
+- Delete the Web-3 and then set up ELK Server.
+
 | Name          | Function   | IP Address | Operating System |
 |---------------|------------|------------|------------------|
 | JBox          | Gateway    | 10.0.0.4   |   Linux          |
 | Web-1         | Web WM 1   | 10.0.0.5   |   Linux          |
-| Web-2         | Web WM 2   | 10.0.0.8   |   Linux          |
-| ELK-Server    | ELK Server | 10.1.0.4   |   Linux          |
+| Web-2         | Web WM 2   | 10.0.0.6   |   Linux          |
+| ELK-Server-2  | ELK Server | 10.1.0.4   |   Linux          |
 
 - Set up RedTeam resoucres as follows:
 
-![](New_Images/19-1-RedTeam-network-diagram.PNG)
+![](Images/RedTeam_resources.png)
 
-![](New_Images/19-RedTeam-vnet-diagram.PNG)
+![](Images/RedTeam_JBox.png)
 
-![](New_Images/3-8-VM-Jbox-deployment-resource.PNG)
+![](Images/RedTeam_Web-1.png)
 
-![](New_Images/5-6-VM-Web-1-resource.PNG)
+![](Images/RedTeam_Web-2.png)
 
-![](New_Images/6-6-VM-Web-2-resource.PNG)
-
-![](New_Images/17-8-ELK-server-VM-resource.PNG)
-
+![](Images/RedTeam_ELK-Server.png)
 
 
 
@@ -78,11 +84,11 @@ A summary of the access policies in place can be found in the table below:
 
 | Name          | Publicly Accessible |  Allowed IP Addresses      |   Location         |
 |---------------|---------------------|----------------------------|--------------------|
-| Jump Box      | Yes                 | 104.209.44.147             |   West US          |
-| Web-1         | No                  | Internal SSH port 22       |   West US          |
-| Web-2         | No                  | Internal SSH port 22       |   West US          |
-| ELK           | Yes                 | 52.170.43.177              |   East US          |
-| Load Blancer  | Yes                 | 40.118.129.79              |   West US          |
+| Jump Box      | Yes                 | SSH port 22                |   West US          |
+| Web-1         | No                  | SSH port 22                |   West US          |
+| Web-2         | No                  | SSH port 22                |   West US          |
+| ELK           | Yes                 | 169.254.224.135            |   East US          |
+| Load Blancer  | Yes                 | 169.254.224.135            |   West US          |
 
 - Set up RedTeam NSG inbound and outbound security setting.
 
@@ -102,7 +108,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` :
 
-![](New_Images/20-5-ansible-elk.PNG)
+![](Images/docker_ps.png)
 
 
 
@@ -111,14 +117,15 @@ This ELK server is configured to monitor the following machines:
 
 - Web-1:10.0.0.5
 
-- Web-2:10.0.0.8
+- Web-2:10.0.0.6
 
 
 We have installed the following Beats on these machines:
 
-- Web-1:10.0.0.5 (Web server A)
+- Web-1:10.0.0.5
 
-- Web-2:10.0.0.8 (Web server AB
+- Web-2:10.0.0.6
+
 
 These Beats allow us to collect the following information from each machine:
 
@@ -133,7 +140,6 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the .yml file to docker.
-- Update the hosts file to include the target machines, Web-1, Web-2 and ELK-Server.
+- Update the hosts file to include the target machines, Web-1, Web-2 an ELK servers.z
 - Run the playbook, and navigate to the target machine to check that the installation worked as expected.
 
-URL: http://ELK-Server_Public_IP:5601

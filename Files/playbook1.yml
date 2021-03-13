@@ -1,0 +1,11 @@
+---
+- name: My frist playbook
+  hosts: webservers
+  become: true
+  tasks:
+
+  - name: Install Apache webserver
+    apt:
+      name: apache2
+      state: present
+
