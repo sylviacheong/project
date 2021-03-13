@@ -119,7 +119,9 @@ We have installed the following Beats on these machines:
 
 - Web-1:10.0.0.5 (Web server A)
 
-- Web-2:10.0.0.8 (Web server A)
+- Web-2:10.0.0.8 (Web server B)
+
+
 
 These Beats allow us to collect the following information from each machine:
 
